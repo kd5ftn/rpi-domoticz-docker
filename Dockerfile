@@ -22,7 +22,7 @@ RUN \
 
 CMD ["/root/domoticz/domoticz", "-www", "8080"]
 
-ADD https://releases.domoticz.com/releases/release/domoticz_linux_armv7l.tgz /root/domoticz
+ADD https://releases.domoticz.com/releases/release/domoticz_linux_armv7l.tgz /root/domoticz/
 
 RUN [ "cross-build-end" ]
 
