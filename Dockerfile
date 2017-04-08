@@ -1,12 +1,12 @@
 #
 # Dockerfile for Rpi-Domoticz
 #
-# Based on version by LBTM
+# Based on version by LBTM, and Florian Chauveau
 #
 # Base image.
-FROM resin/rpi-raspbian:jessie-20161026
+FROM resin/armv7hf-debian:latest
 
-MAINTAINER Florian Chauveau
+MAINTAINER Nick McCarthy
 
 # Install Domoticz from sources.
 RUN \
@@ -23,4 +23,4 @@ EXPOSE 8080
 
 CMD ["/root/domoticz/domoticz", "-www", "8080"]
 
-ADD domoticz_linux_armv7l.tgz /root/domoticz
+ADD https://releases.domoticz.com/releases/release/domoticz_linux_armv7l.tgz /root/domoticz
