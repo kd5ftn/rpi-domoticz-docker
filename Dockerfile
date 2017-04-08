@@ -4,7 +4,7 @@
 # Based on version by LBTM, and Florian Chauveau
 #
 # Base image.
-FROM resin/armv7hf-debian:latest
+FROM resin/armv7hf-debian-qemu:latest
 
 MAINTAINER Nick McCarthy
 
