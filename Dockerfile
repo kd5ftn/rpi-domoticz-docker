@@ -6,6 +6,8 @@
 # Base image.
 FROM resin/armv7hf-debian-qemu:latest
 
+RUN [ "cross-build-start" ]
+
 MAINTAINER Nick McCarthy
 
 # Install Domoticz from sources.
@@ -18,9 +20,11 @@ RUN \
   apt-get autoclean && \
   rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-# Expose port.
-EXPOSE 8080
-
 CMD ["/root/domoticz/domoticz", "-www", "8080"]
 
 ADD https://releases.domoticz.com/releases/release/domoticz_linux_armv7l.tgz /root/domoticz
+
+RUN [ "cross-build-end" ]
+
+# Expose port.
+EXPOSE 8080
