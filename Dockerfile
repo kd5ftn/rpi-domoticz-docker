@@ -24,6 +24,9 @@ CMD ["/root/domoticz/domoticz", "-www", "8080"]
 
 ADD https://releases.domoticz.com/releases/release/domoticz_linux_armv7l.tgz /root/domoticz/
 
+RUN \
+  tar -xvzf /root/domoticz/domoticz_linux_armv7l.tgz
+
 RUN [ "cross-build-end" ]
 
 # Expose port.
